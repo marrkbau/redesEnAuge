@@ -1,5 +1,7 @@
 package com.utn.redes.perfil;
 
+import com.utn.redes.publicacion.Publicacion;
+
 import java.util.List;
 
 public class Perfil {
