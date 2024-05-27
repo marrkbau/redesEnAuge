@@ -2,18 +2,11 @@ package com.utn.redes.perfil;
 
 import com.utn.redes.Persistente;
 import com.utn.redes.calculador.CalculadorInteres;
+import com.utn.redes.converters.CalculadorInteresConverter;
 import com.utn.redes.publicacion.Publicacion;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -21,7 +14,8 @@ import java.util.List;
 public class Perfil extends Persistente {
 
 
-  private CalculadorInteres calculadorInteresUsado;
+  @Convert(converter = CalculadorInteresConverter.class)
+  private CalculadorInteres calculador;
 
   @Column(name = "sitio_web")
   private String sitioWeb;
@@ -47,5 +41,4 @@ public class Perfil extends Persistente {
       inverseJoinColumns = @JoinColumn(name = "seguidor_id")
   )
   private List<Perfil> seguidores;
-
 }

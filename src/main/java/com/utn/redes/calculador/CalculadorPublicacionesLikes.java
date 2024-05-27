@@ -14,10 +14,8 @@ import java.util.List;
 public class CalculadorPublicacionesLikes extends Persistente implements CalculadorInteres {
 
 
-  @Override
-  public Double calcularInteres(Perfil perfil, List<Like> likes) {
-    return null;
-  }
-
-
+    @Override
+    public Double calcularInteres(Perfil perfil, List<Like> likes) {
+        return null;
+    }
 }
