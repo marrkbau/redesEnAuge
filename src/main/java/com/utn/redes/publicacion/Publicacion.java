@@ -9,8 +9,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "Publicacion")
-@Getter
-@Setter
 public class Publicacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +17,7 @@ public class Publicacion {
     private String contenido;
     private LocalDate fechaPublicacion;
     private String usuario;
-    private List<Comentario> comentarios;
+    //private List<Comentario> comentarios;
     private EstadoPublicacion estado;
-    private List<Tag> tags;
+   // private List<Tag> tags;
 }

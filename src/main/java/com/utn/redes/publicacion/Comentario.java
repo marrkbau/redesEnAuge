@@ -1,5 +1,7 @@
 package com.utn.redes.publicacion;
 
+import com.utn.redes.perfil.Perfil;
+
 import java.time.LocalDate;
 
 public class Comentario {
