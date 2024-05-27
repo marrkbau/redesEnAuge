@@ -9,9 +9,7 @@ import jakarta.persistence.MappedSuperclass;
 @Entity
 @MappedSuperclass
 public class Persistente {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 }
