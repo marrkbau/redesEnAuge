@@ -28,12 +28,11 @@ public class Perfil extends Persistente {
   private String urlFotoPerfil;
 
   @OneToOne
-  @Column(name = "usuario")
-  @JoinColumn(referencedColumnName = "perfil_id")
+  @JoinColumn(referencedColumnName = "id")
   private Usuario usuario;
 
   @OneToMany
-  @JoinColumn(referencedColumnName = "perfil_id")
+  @JoinColumn(referencedColumnName = "id")
   private List<Publicacion> publicaciones;
 
   @ManyToMany

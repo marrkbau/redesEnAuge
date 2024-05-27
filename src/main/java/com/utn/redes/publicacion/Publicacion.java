@@ -9,6 +9,8 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "Publicacion")
@@ -23,20 +25,25 @@ public class Publicacion extends Persistente {
     private LocalDate fechaPublicacion;
 
     @OneToOne
+    @JoinColumn(name = "perfil_id")
     private Perfil perfil;
 
     @ManyToMany
     @JoinTable(name = "publicacion_compartida",
-            joinColumns = @JoinColumn(name = "publicacion_id"),
-            inverseJoinColumns = @JoinColumn(name = "perfil_id"))
-    private List<Comentario> comentarios;
+        joinColumns = @JoinColumn(name = "publicacion_id"),
+        inverseJoinColumns = @JoinColumn(name = "perfil_id"))
+    private List<Perfil> perfilesCompartidos;
 
     @Enumerated(EnumType.STRING)
     private EstadoPublicacion estado;
 
-    @OneToMany
+    @OneToMany(mappedBy = "publicacion", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comentario> comentarios;
+
+    @ManyToMany
     @JoinTable(name = "publicacion_tag",
-            joinColumns = @JoinColumn(name = "publicacion_id"),
-            inverseJoinColumns = @JoinColumn(name = "tag_id"))
+        joinColumns = @JoinColumn(name = "publicacion_id"),
+        inverseJoinColumns = @JoinColumn(name = "tag_id"))
     private List<Tag> tags;
 }
+

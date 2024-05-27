@@ -5,8 +5,8 @@ import com.utn.redes.publicacion.Publicacion;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "like_publicacion")
-public class LikePublicacion extends Persistente {
+@DiscriminatorValue("like_publicacion")
+public class LikePublicacion extends Like {
 
     @OneToOne
     private Publicacion publicacion;

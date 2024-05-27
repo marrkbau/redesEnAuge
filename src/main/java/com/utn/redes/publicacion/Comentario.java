@@ -4,6 +4,7 @@ import com.utn.redes.Persistente;
 import com.utn.redes.perfil.Perfil;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -23,6 +24,6 @@ public class Comentario extends Persistente {
     private LocalDate fechaComentario;
     @OneToOne
     private Perfil comentador;
-    @OneToOne
+    @ManyToOne
     private Publicacion publicacion;
 }
