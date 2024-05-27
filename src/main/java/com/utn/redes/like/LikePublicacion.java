@@ -1,11 +1,17 @@
 package com.utn.redes.like;
 
+import com.utn.redes.Persistente;
 import com.utn.redes.publicacion.Publicacion;
+import jakarta.persistence.*;
 
-public class LikePublicacion {
+@Entity
+@Table(name = "like_publicacion")
+public class LikePublicacion extends Persistente {
 
-  private Publicacion publicacion;
+    @OneToOne
+    private Publicacion publicacion;
 
-  private String motivo;
+    @Column(name = "motivo")
+    private String motivo;
 
 }

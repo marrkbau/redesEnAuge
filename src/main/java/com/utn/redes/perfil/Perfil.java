@@ -16,7 +16,7 @@ import jakarta.persistence.Transient;
 import java.util.List;
 
 @Entity
-@Table(name = "perfil")
+@Table(name = "Perfil")
 public class Perfil extends Persistente {
   @Column(name = "sitio_web")
   private String sitioWeb;
