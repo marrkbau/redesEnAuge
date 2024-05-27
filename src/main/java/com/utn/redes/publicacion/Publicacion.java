@@ -28,12 +28,6 @@ public class Publicacion extends Persistente {
     @JoinColumn(name = "perfil_id")
     private Perfil perfil;
 
-    @ManyToMany
-    @JoinTable(name = "publicacion_compartida",
-        joinColumns = @JoinColumn(name = "publicacion_id"),
-        inverseJoinColumns = @JoinColumn(name = "perfil_id"))
-    private List<Perfil> perfilesCompartidos;
-
     @Enumerated(EnumType.STRING)
     private EstadoPublicacion estado;
 

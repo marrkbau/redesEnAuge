@@ -1,6 +1,7 @@
 package com.utn.redes.perfil;
 
 import com.utn.redes.Persistente;
+import com.utn.redes.calculador.CalculadorInteres;
 import com.utn.redes.publicacion.Publicacion;
 
 import jakarta.persistence.Column;
@@ -18,6 +19,10 @@ import java.util.List;
 @Entity
 @Table(name = "Perfil")
 public class Perfil extends Persistente {
+
+
+  private CalculadorInteres calculadorInteresUsado;
+
   @Column(name = "sitio_web")
   private String sitioWeb;
 
