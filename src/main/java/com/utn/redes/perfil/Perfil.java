@@ -15,6 +15,7 @@ public class Perfil extends Persistente {
 
 
   @Convert(converter = CalculadorInteresConverter.class)
+  @Column
   private CalculadorInteres calculador;
 
   @Column(name = "sitio_web")
